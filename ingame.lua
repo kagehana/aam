@@ -42,6 +42,8 @@ end
 
 local bee = workspace._UNITS.bee_girl
 
+endp.change_priority:InvokeServer(bee, 'strongest')
+
 local function leave()
     print('- queueing more code')
     queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/kagehana/aam/refs/heads/main/main.lua", true))()')
