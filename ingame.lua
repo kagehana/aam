@@ -64,7 +64,7 @@ local function leave()
 end
 
 result.Title:GetPropertyChangedSignal('Text'):Connect(function()
-    if result.Title.Text == 'DEFEAT' then
+    if result.Title.Text:find('DEFEAT') then
          leave()
     end
 end)
