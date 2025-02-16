@@ -62,5 +62,5 @@ wave:GetPropertyChangedSignal('Value'):Connect(function()
 end)
 
 while task.wait(60) do
-    mouse1click()
+    client.Character.Humanoid.Jump = true
 end
