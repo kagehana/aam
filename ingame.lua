@@ -60,3 +60,7 @@ wave:GetPropertyChangedSignal('Value'):Connect(function()
         leave()
     end
 end)
+
+while task.wait(60) do
+    mouse1click()
+end
