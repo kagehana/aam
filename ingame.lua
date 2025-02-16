@@ -74,5 +74,5 @@ while true do
 
     endp.upgrade_unit_ingame:InvokeServer(bee)
 
-    task.wait(30)
+    task.wait(15)
 end
