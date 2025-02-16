@@ -72,7 +72,7 @@ while true do
     vu:CaptureController()
     vu:ClickButton2(Vector2.new())
 
-    remotes.upgrade_unit_ingame:InvokeServer(bee)
+    endp.upgrade_unit_ingame:InvokeServer(bee)
 
     task.wait(30)
 end
