@@ -40,7 +40,7 @@ for k, v in pairs(map) do
     end
 end
 
-local bee = workspace._UNITS.bee_girl
+local bee    = workspace._UNITS.bee_girl
 local result = pgui.ResultsUI.Holder
 
 endp.change_priority:InvokeServer(bee, 'strongest')
@@ -62,8 +62,6 @@ local function leave()
     print('- back to the lobby we go...')
     endp.teleport_back_to_lobby:InvokeServer()
 end
-
-local result = pgui.ResultsUI.Holder.Title
 
 result.Title:GetPropertyChangedSignal('Text'):Connect(function()
     if result.Title.Text == 'DEFEAT' then
