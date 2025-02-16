@@ -45,6 +45,7 @@ local bee = workspace._UNITS.bee_girl
 endp.change_priority:InvokeServer(bee, 'strongest')
 
 local function leave()
+    print('- game finished')
     print('- queueing more code')
     queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/kagehana/aam/refs/heads/main/main.lua", true))()')
 
@@ -53,17 +54,11 @@ local function leave()
 end
 
 pgui.ResultsUI.Holder.Title:GetPropertyChangedSignal('Text'):Connect(function()
-    print('- your teammates sucked')
     leave()
 end)
 
-wave:GetPropertyChangedSignal('Value'):Connect(function()
-    print('- on wave #' .. wave.Value)
-
-    if wave.Value == 50 then
-        print('- game won')
-        leave()
-    end
+workspace._DATA.GameFinished:GetPropertyChangedSignal('Value'):Connect(function()
+    leave()
 end)
 
 while true do
