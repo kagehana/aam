@@ -20,7 +20,7 @@ local money  = pgui:WaitForChild('spawn_units').Lives.Frame.Resource.Money.text
 
 print('- voting to start')
 
-for i = 1, 25 do
+for i = 1, 5 do
     task.wait()
     endp.vote_start:InvokeServer()
 end
