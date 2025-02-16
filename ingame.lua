@@ -53,12 +53,20 @@ local function leave()
     endp.teleport_back_to_lobby:InvokeServer()
 end
 
-pgui.ResultsUI.Holder.Title:GetPropertyChangedSignal('Text'):Connect(function()
-    leave()
+local result = pgui.ResultsUI.Holder.Title
+
+result:GetPropertyChangedSignal('Text'):Connect(function()
+    if result.Text == 'DEFEAT' then
+         leave()
+    end
 end)
 
-workspace._DATA.GameFinished:GetPropertyChangedSignal('Value'):Connect(function()
-    leave()
+local gamefinished = workspace._DATA.GameFinished
+
+gamefinished:GetPropertyChangedSignal('Value'):Connect(function()
+    if gamefinished.Value then
+        leave()
+    end
 end)
 
 while true do
