@@ -63,12 +63,6 @@ local function leave()
     endp.teleport_back_to_lobby:InvokeServer()
 end
 
-result.Title:GetPropertyChangedSignal('Text'):Connect(function()
-    if result.Title.Text:find('DEFEAT') then
-         leave()
-    end
-end)
-
 local gamefinished = workspace._DATA.GameFinished
 
 gamefinished:GetPropertyChangedSignal('Value'):Connect(function()
