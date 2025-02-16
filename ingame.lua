@@ -46,6 +46,8 @@ endp.change_priority:InvokeServer(bee, 'strongest')
 
 local function leave()
     print('- game finished')
+    task.wait(5)
+    
     print('- queueing more code')
     queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/kagehana/aam/refs/heads/main/main.lua", true))()')
 
