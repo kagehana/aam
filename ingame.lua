@@ -57,7 +57,7 @@ wave:GetPropertyChangedSignal('Value'):Connect(function()
     print('- on wave #' .. wave.Value)
 
     if wave.Value == 50 then
-        print('- reporting to the server')
+        print('- game won')
         leave()
     end
 end)
