@@ -2,7 +2,7 @@ while not game:IsLoaded() do
     task.wait()
 end
  
-task.wait(15)
+task.wait(30)
  
 ------------------------------------------------------
  
