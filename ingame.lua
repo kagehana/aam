@@ -41,12 +41,20 @@ for k, v in pairs(map) do
 end
 
 local bee = workspace._UNITS.bee_girl
+local result = pgui.ResultsUI.Holder
 
 endp.change_priority:InvokeServer(bee, 'strongest')
 
 local function leave()
     print('- game finished')
     task.wait(5)
+
+    print('- collecting rewards')
+    for k, v in ipairs(getconnections(result.Buttons.Next.Activated)) do
+        v.Function()
+    end
+
+    task.wait(1)
     
     print('- queueing more code')
     queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/kagehana/aam/refs/heads/main/main.lua", true))()')
@@ -57,8 +65,8 @@ end
 
 local result = pgui.ResultsUI.Holder.Title
 
-result:GetPropertyChangedSignal('Text'):Connect(function()
-    if result.Text == 'DEFEAT' then
+result.Title:GetPropertyChangedSignal('Text'):Connect(function()
+    if result.Title.Text == 'DEFEAT' then
          leave()
     end
 end)
