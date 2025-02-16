@@ -19,7 +19,10 @@ local pgui   = client.PlayerGui
 local money  = pgui:WaitForChild('spawn_units').Lives.Frame.Resource.Money.text
 
 print('- voting to start')
-endp.vote_start:InvokeServer()
+
+for i = 1, 50 then
+    endp.vote_start:InvokeServer()
+end
 
 while tonumber(money.Text) < 1000 do
     task.wait()
