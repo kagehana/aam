@@ -1,6 +1,7 @@
 -- services
 local repstore  = game:GetService('ReplicatedStorage')
 local players   = game:GetService('Players')
+local vu        = game:GetService('VirtualUser')
 local http      = game:GetService('HttpService')
 local workspace = game:GetService('Workspace')
 
@@ -61,6 +62,9 @@ wave:GetPropertyChangedSignal('Value'):Connect(function()
     end
 end)
 
-while task.wait(60) do
-    client.Character.Humanoid.Jump = true
+while true do
+    vu:CaptureController()
+    vu:ClickButton2(Vector2.new())
+
+    task.wait(10)
 end
