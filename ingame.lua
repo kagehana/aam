@@ -9,7 +9,7 @@ while not game:IsLoaded() do
     task.wait()
 end
 
-task.wait(31)
+task.wait(26)
 
 -- containers
 local client = players.LocalPlayer
@@ -20,7 +20,8 @@ local money  = pgui:WaitForChild('spawn_units').Lives.Frame.Resource.Money.text
 
 print('- voting to start')
 
-for i = 1, 50 then
+for i = 1, 25 do
+    task.wait()
     endp.vote_start:InvokeServer()
 end
 
