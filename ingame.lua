@@ -63,8 +63,10 @@ wave:GetPropertyChangedSignal('Value'):Connect(function()
 end)
 
 while true do
+    print('- clicking')
+    
     vu:CaptureController()
     vu:ClickButton2(Vector2.new())
 
-    task.wait(10)
+    task.wait(30)
 end
