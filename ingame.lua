@@ -9,7 +9,7 @@ while not game:IsLoaded() do
     task.wait()
 end
 
-task.wait(27)
+task.wait(31)
 
 -- containers
 local client = players.LocalPlayer
